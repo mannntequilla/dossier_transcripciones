@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dossier interactivo</title>
+  <script src="https://pdfjs.express/lib/webviewer.min.js"></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    #viewer {
+      height: 100vh;
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  <div id="viewer"></div>
+  <script>
+    WebViewer({
+      path: 'https://pdfjs.express/lib', // Librería CDN
+      initialDoc: './dossier-transcripciones.pdf', // Asegúrate de que esté en el mismo repo
+      enableAnnotations: false,
+      fullAPI: false,
+    }, document.getElementById('viewer'))
+  </script>
+</body>
+</html>
